@@ -74,8 +74,8 @@ public class Text {
         // current text: h e l l o w w o r d  i a  m  j  a  v  a  d  o  l  i  a
         //            i: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21
         //
-        //            j: 0 1 2 3
-        //     oldChars: o l i a
+        //            j: 0 1 2 3 4
+        //     oldChars: j a v a d
         //
         //     newChars: s a v a r
         //
@@ -102,10 +102,11 @@ public class Text {
         int newLength = currentText.length +
                 occurrenceCount * (newChars.currentText.length - oldChars.currentText.length);
 
+        // Create new array with new size
         char[] result = new char[newLength];
         int resultIndex = 0;
         int currentIndex = 0;
-
+        // Search for old characters that will be replaced
         for (int i = 0; i <= currentText.length - oldChars.currentText.length; i++) {
             boolean isOccurrence = true;
             for (int j = 0; j < oldChars.currentText.length; j++) {
